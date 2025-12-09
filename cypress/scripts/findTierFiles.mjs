@@ -16,7 +16,7 @@ if (!tierArg) {
 // Split multiple tiers
 const tierTags = tierArg.split(",").map((t) => t.trim());
 
-const rootDir = resolve("cypress/e2e/tests");
+const rootDir = resolve("e2e/tests");
 
 function getAllTestFiles(dir) {
   return globSync("**/*.{ts,js}", { cwd: dir, absolute: true });

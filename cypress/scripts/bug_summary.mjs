@@ -4,7 +4,7 @@ import { merge } from "mochawesome-merge";
 import { table } from "table";
 
 const bugPattern = /Bug\s+([A-Z]+-\d+)/i;
-const fileArg = process.argv[2] || "cypress/run/report/.jsons/*.json";
+const fileArg = process.argv[2] || "run/report/*.json";
 
 const red = (text) => `\x1b[31m${text}\x1b[0m`;
 const green = (text) => `\x1b[32m${text}\x1b[0m`;
