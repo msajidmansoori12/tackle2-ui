@@ -84,9 +84,8 @@ export default defineConfig({
       config.env.svn_user = process.env.CYPRESS_SVN_USER;
       config.env.svn_password = process.env.CYPRESS_SVN_PASSWORD;
 
-      // Plugins
-      on("file:preprocessor", createBundler());
-      on("file:preprocessor", tagify(config));
+      // Plugins - tagify wraps the esbuild bundler to support tag filtering
+      on("file:preprocessor", tagify(config, createBundler()));
       cypressFastFail(on, config);
       cypressFsPlugins(on, config);
       cypressMochawesomeReporter(on, config);
