@@ -9,12 +9,12 @@ import { globSync } from "glob";
 // Read tier tags from CLI argument
 const tierArg = process.argv[2];
 if (!tierArg) {
-  console.error("Usage: node findTierFiles.js <tierTag1,tierTag2,...>");
+  console.error("Usage: node findTierFiles.mjs <tierTag1,tierTag2,...>");
   process.exit(1);
 }
 
 // Split multiple tiers
-const tierTags = tierArg.split(",").map((t) => t.trim());
+const tierTags = tierArg.split(",").map((t) => t.trim().replace(/^@/, ""));
 
 const rootDir = resolve("e2e/tests");
 
